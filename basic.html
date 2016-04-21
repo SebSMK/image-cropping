@@ -1,0 +1,32 @@
+<html>
+<head>
+ <meta charset="utf-8" />
+ <meta name="DC.creator" content="Ruven Pillay &lt;ruven@users.sourceforge.netm&gt;"/>
+ <meta name="DC.title" content="IIPImage with OpenSeaDragon"/>
+ <meta name="DC.subject" content="IIPImage; Visualization; OpenSeaDragon; High Resolution; Deepzoom"/>
+ <meta name="DC.description" content="IIPImage Demo featuring OpenSeaDragon and Deepzoom"/>
+ <meta name="DC.rights" content="Copyright &copy; 2015 Ruven Pillay"/>
+ <meta name="DC.source" content="http://iipimage.sourceforge.net"/>
+ <title>IIPImage with OpenSeaDragon</title>
+ <style type="text/css">
+  body{ margin: 0; padding: 0; background: black; color: #fff; font-family: Verdana, sans-serif }
+  div#openseadragon{ width: 100%; height: 100%; position:absolute; }
+  a{ color: #eee; }
+  div#caption{ bottom: 0; align: right; position: absolute; margin: 0.66em; background: transparent; padding: 0.5em; width: 66% }
+ </style>
+ <script src="openseadragon.min.js"></script>
+</head>
+<body>
+<div id="openseadragon"></div>
+<div id="caption"><a href="http://iipimage.sourceforge.net"><img src="images/iip.32x32.png" style="float:left; margin-right:5px"/>IIPImage</a> serving Deepzoom tiles to <a href="https://openseadragon.github.io/" target="_blank">OpenSeaDragon</a>:<br/>29566x14321 pixel <a href="http://hubblesite.org/newscenter/archive/releases/2007/16/" target="_blank">Hubble telescope image</a> of star birth in the Carina Nebula<div>
+<script type="text/javascript">
+    var viewer = OpenSeadragon({
+        id: "openseadragon",
+	showNavigator: true,
+        prefixUrl: "images/",
+        tileSources: "/iipsrv/iipsrv.fcgi?Deepzoom=/var/www/html/iipmooviewer/fci-images/KMS3123_pyr_256.tif.dzi"
+        
+    });
+</script>
+</body>
+</html>
